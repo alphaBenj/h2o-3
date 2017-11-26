@@ -19,7 +19,9 @@ try {
             retry(3) {
               timeout(time: 1, unit: 'MINUTES') {
                 echo "###### Checkout H2O-3 ######"
-                checkout scm
+                def scmEnv = checkout scm
+                echo "${scmEnv}"
+                error "TESTING"
               }
             }
           }
